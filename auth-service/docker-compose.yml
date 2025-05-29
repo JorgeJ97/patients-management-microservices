@@ -1,0 +1,42 @@
+services:
+  auth-service:
+    image: auth-service-image:latest
+    container_name: auth-service-container
+    build: .
+#    ports:
+#      - "4003:4003"
+    depends_on:
+      - auth-db
+
+    environment:
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+      JWT_EXPIRATION_TIME: ${JWT_EXPIRATION_TIME}
+
+    networks:
+      - patients-management-network
+
+  auth-db:
+    image: postgres:latest
+    container_name: auth-service-db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+#    ports:
+#      - "5434:5432"
+
+    volumes:
+      - auth_data:/var/lib/postgresql/data
+    networks:
+      - patients-management-network
+
+volumes:
+  auth_data:
+
+networks:
+  patients-management-network:
+    external: true

@@ -1,0 +1,15 @@
+services:
+  billing-service:
+    image: billing-service-image:latest
+    container_name: billing-service-container
+    build: .
+#    ports:
+#      - "4001:4001"
+#      - "9001:9001"
+
+    networks:
+      - patients-management-network
+
+networks:
+  patients-management-network:
+    external: true

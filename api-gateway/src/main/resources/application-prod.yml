@@ -1,0 +1,87 @@
+server:
+  port: 4004
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.netty: DEBUG
+
+auth:
+  service:
+    url: http://auth-service.patients-management:4003/auth
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: auth-service-route
+          uri: http://auth-service.patients-management:4003
+          predicates:
+            - Path=/auth/**
+
+
+        - id: patients-service-route
+          uri: http://patients-service.patients-management:4000
+          predicates:
+            - Path=/api/patients/**
+          filters:
+            - StripPrefix=1
+            - name: Jwt
+              args:
+                includeUserInfo: true
+
+
+        #          Patients docs route
+        - id: api-docs-patients-route
+          uri: http://host.docker.internal:4000
+          predicates:
+            - Path=/api-docs/patients
+          filters:
+            - RewritePath=/api-docs/patients, /v3/api-docs
+
+            # Swagger UI HTML for patients docs
+        - id: swagger-ui-html-route-patients
+          uri: http://host.docker.internal:4000
+          predicates:
+            - Path=/swagger-ui/**
+
+        # Swagger config for patients docs
+        - id: swagger-config-route-patients
+          uri: http://host.docker.internal:4000
+          predicates:
+            - Path=/v3/api-docs/swagger-config
+
+            # Webjars for patients docs
+        - id: webjars-route-patients
+          uri: http://host.docker.internal:4000
+          predicates:
+            - Path=/webjars/**
+
+
+
+        #          Auth docs route
+        - id: api-docs-auth-route
+          uri: http://host.docker.internal:4003
+          predicates:
+            - Path=/api-docs/auth
+          filters:
+            - RewritePath=/api-docs/auth, /v3/api-docs
+
+        # Swagger UI HTML for auth docs
+        - id: swagger-ui-html-route-auth
+          uri: http://host.docker.internal:4003
+          predicates:
+            - Path=/swagger-ui/**
+
+        # Swagger config for auth docs
+        - id: swagger-config-route-auth
+          uri: http://host.docker.internal:4003
+          predicates:
+            - Path=/v3/api-docs/swagger-config
+
+        # Webjars for auth docs
+        - id: webjars-route-auth
+          uri: http://host.docker.internal:4003
+          predicates:
+            - Path=/webjars/**
