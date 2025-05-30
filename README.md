@@ -26,8 +26,8 @@ Este proyecto es una **API basada en microservicios** para la gestión de pacien
 
 ---
 
-## 🧩 Arquitectura en AWS
-![Arquitectura general](./infrastructure/assets/Patients-Management-Infrastructure-diagram.drawio.png)
+## 🧩 Infraestructura en AWS
+![Infrastructure](./infrastructure/assets/Patients-Management-Infrastructure-diagram.drawio.png)
 
 
 ## 🛠️ Tecnologías
