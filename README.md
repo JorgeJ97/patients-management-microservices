@@ -1,4 +1,4 @@
-# 🏥 Patients Management Microservices
+#  Patients Management Microservices
 
 Este proyecto es una **API basada en microservicios** para la gestión de pacientes en un entorno clínico. Está diseñada para escalar, ser segura y simular un entorno real de despliegue en AWS utilizando herramientas modernas como Kafka, Docker, CDK, LocalStack, entre otras.
 
@@ -14,16 +14,12 @@ Este proyecto es una **API basada en microservicios** para la gestión de pacien
 - [🧪 Tests](#-tests)
 - [💻 Ejecutar localmente](#-ejecutar-localmente)
 - [🖼️ Capturas de pantalla](#-capturas-de-pantalla)
-- [📄 Licencia](#-licencia)
-
 ---
 
 ## 🚀 Características
 
 - Gestión completa de pacientes (CRUD).
 - Autenticación y autorización segura con JWT.
-- Sistema de facturación.
-- Análisis de datos con microservicio de analytics.
 - Comunicación entre servicios con **Apache Kafka**.
 - Despliegue automatizado con **AWS CDK**.
 - Emulación local de la nube con **LocalStack**.
@@ -31,27 +27,8 @@ Este proyecto es una **API basada en microservicios** para la gestión de pacien
 ---
 
 ## 🧩 Arquitectura
+![Arquitectura general](./infrastructure/assets/Patients-Management-Infrastructure-diagram.drawio.png)
 
-```txt
-           Usuario
-              |
-              v
-        ┌────────────┐
-        │API Gateway │
-        └─────┬──────┘
-              |
- ┌────────────┼────────────┐
- ↓            ↓            ↓
-Auth      Patients     Billing
-Service   Service      Service
-  ↓            ↓            ↓
-PostgreSQL  PostgreSQL   Kafka (MSK)
-              ↓
-          Analytics
-           Service
-```
-
----
 
 ## 🛠️ Tecnologías
 
@@ -127,8 +104,5 @@ Accede al API Gateway en: [http://localhost:8080](http://localhost:8080)
 
 ---
 
-## 🖼️ Capturas de pantalla
-
-![Arquitectura general](./infrastructure/assets/Patients-Management-Infrastructure-diagram.drawio.png)
 
 
