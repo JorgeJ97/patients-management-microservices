@@ -129,15 +129,9 @@ Accede al API Gateway en: [http://localhost:8080](http://localhost:8080)
 
 ## 🖼️ Capturas de pantalla
 
-> Agrega aquí tus capturas alojadas en `./assets/`
 
 ```md
-![Arquitectura general](./assets/arquitectura.png)
-![Ejemplo en Docker](./assets/docker-demo.png)
+![Arquitectura general](./infrastructure/assets/Patients-Management-Infrastructure-diagram.drawio.png)
 ```
 
 ---
-
-## 📄 Licencia
-
-Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](./LICENSE) para más detalles.
