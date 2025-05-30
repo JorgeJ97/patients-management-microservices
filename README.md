@@ -132,9 +132,3 @@ Accede al API Gateway en: [http://localhost:8080](http://localhost:8080)
 ![Arquitectura general](./infrastructure/assets/Patients-Management-Infrastructure-diagram.drawio.png)
 
 
-```md
-![Arquitectura general](./infrastructure/assets/Patients-Management-Infrastructure-diagram.drawio.png)
-infrastructure/assets/Patients-Management-Infrastructure-diagram.drawio.png
-```
-
----
