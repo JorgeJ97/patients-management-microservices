@@ -13,7 +13,7 @@ Este proyecto es una **API basada en microservicios** para la gestión de pacien
 - [☁️ Despliegue](#-despliegue)
 - [🧪 Tests](#-tests)
 - [💻 Ejecutar localmente](#-ejecutar-localmente)
-- [Documentacion API](#-documentacionAPI)
+- [📖 Documentacion API](#-documentacionAPI)
 ---
 
 ## 🚀 Características
@@ -105,7 +105,7 @@ Accede al API Gateway en: [http://localhost:8080](http://localhost:8080)
 
 ---
 
-## Documentacion API
+## 📖 Documentacion API
 
 
 
