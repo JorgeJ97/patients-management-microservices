@@ -7,7 +7,7 @@ Este proyecto es una **API basada en microservicios** para la gestión de pacien
 ## 📌 Tabla de contenidos
 
 - [🚀 Características](#-características)
-- [🧩 Arquitectura](#-arquitectura)
+- [🧩 Infraestructura en AWS](#-infraestructura)
 - [🛠️ Tecnologías](#-tecnologías)
 - [📦 Microservicios](#-microservicios)
 - [☁️ Despliegue](#-despliegue)
