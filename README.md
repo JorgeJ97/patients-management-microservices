@@ -1,6 +1,6 @@
 #  Patients Management Microservices
 
-Este proyecto es una **API basada en microservicios** para la gestión de pacientes en un entorno clínico. Está diseñada para escalar, ser segura y simular un entorno real de despliegue en AWS utilizando herramientas modernas como Kafka, Docker, CDK, LocalStack, entre otras.
+Este proyecto es una **API basada en microservicios** para la gestión de pacientes. Está diseñada para escalar, ser segura y simular un entorno real de despliegue en AWS utilizando herramientas modernas como Kafka, Docker, CDK, LocalStack, entre otras.
 
 ---
 
@@ -13,7 +13,7 @@ Este proyecto es una **API basada en microservicios** para la gestión de pacien
 - [☁️ Despliegue](#-despliegue)
 - [🧪 Tests](#-tests)
 - [💻 Ejecutar localmente](#-ejecutar-localmente)
-- [🖼️ Capturas de pantalla](#-capturas-de-pantalla)
+- [Documentacion API](#-documentacionAPI)
 ---
 
 ## 🚀 Características
@@ -26,7 +26,7 @@ Este proyecto es una **API basada en microservicios** para la gestión de pacien
 
 ---
 
-## 🧩 Arquitectura
+## 🧩 Arquitectura en AWS
 ![Arquitectura general](./infrastructure/assets/Patients-Management-Infrastructure-diagram.drawio.png)
 
 
@@ -34,6 +34,7 @@ Este proyecto es una **API basada en microservicios** para la gestión de pacien
 
 - **Java & Spring Boot**
 - **Kafka (MSK)**
+- **gRPC**
 - **PostgreSQL (RDS)**
 - **Docker**
 - **AWS CDK** (Infraestructura como código)
@@ -42,7 +43,8 @@ Este proyecto es una **API basada en microservicios** para la gestión de pacien
 - **Route 53** (Health checks)
 - **ALB (Application Load Balancer)**
 - **LocalStack** (Simulación de servicios AWS)
-- **JUnit / Testcontainers** (Testing)
+- **JUnit** (Testing)
+- **Swagger ui** (Para documentacion de la API)
 
 ---
 
@@ -84,7 +86,6 @@ docker-compose up --build
 
 ## 🧪 Tests
 
-- **Testcontainers** para crear contenedores temporales de Kafka/Postgres.
 - Pruebas de integración con **JUnit 5**.
 
 ---
@@ -103,6 +104,9 @@ docker-compose up --build
 Accede al API Gateway en: [http://localhost:8080](http://localhost:8080)
 
 ---
+
+## Documentacion API
+
 
 
 
