@@ -84,7 +84,7 @@ public class LocalStack extends Stack {
                 List.of(4000),
                 patientsServiceDb,
                 ecsCluster,
-                Map.of("BILLING_SERVICE_ADDRESS", "billing-service.patients-management",
+                Map.of("BILLING_SERVICE_ADDRESS", "host.docker.internal",
                         "BILLING_SERVICE_GRPC_PORT", "9001"),
                 Map.of("SPRING_DATASOURCE_PASSWORD", patientsDbPassword)
         );
@@ -102,7 +102,7 @@ public class LocalStack extends Stack {
                 ecsCluster,
                 Map.of(
                         "SPRING_PROFILES_ACTIVE", "prod",
-                        "AUTH_SERVICE_URL", "http://auth-service.patients-management:4003/auth",
+                        "AUTH_SERVICE_URL", "http://host.docker.internal:4003/auth",
                         "LOGGING_LEVEL_ROOT", "DEBUG",
                         "LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_CLOUD_GATEWAY", "TRACE"
                 ),

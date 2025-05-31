@@ -110,10 +110,6 @@ public class InfrastructureFactory {
                 .serviceName(imageName)
                 .assignPublicIp(false)
                 .taskDefinition(taskDefinition)
-                .cloudMapOptions(CloudMapOptions.builder()
-                        .name(imageName)
-                        .cloudMapNamespace(ecsCluster.getDefaultCloudMapNamespace())
-                        .build())
                 .build();
     }
 

@@ -9,20 +9,20 @@ logging:
 
 auth:
   service:
-    url: http://auth-service.patients-management:4003/auth
+    url: http://host.docker.internal:4003/auth
 
 spring:
   cloud:
     gateway:
       routes:
         - id: auth-service-route
-          uri: http://auth-service.patients-management:4003
+          uri: http://host.docker.internal:4003
           predicates:
             - Path=/auth/**
 
 
         - id: patients-service-route
-          uri: http://patients-service.patients-management:4000
+          uri: http://host.docker.internal:4000
           predicates:
             - Path=/api/patients/**
           filters:

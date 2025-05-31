@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  localstack:
+    container_name: localstack-main
+    image: localstack/localstack-pro
+    ports:
+      - "127.0.0.1:4566:4566"            # Gateway principal
+      - "127.0.0.1:4510-4559:4510-4559"  # Rango de puertos para servicios
+      - "127.0.0.1:443:443"              # HTTPS (Pro)
+    environment:
+      - LOCALSTACK_AUTH_TOKEN=${LOCALSTACK_AUTH_TOKEN:?}  # Token obligatorio
+      - DEBUG=1                               # Logs detallados
+      - PERSISTENCE=0                    # Persistencia
+    volumes:
+      - "${LOCALSTACK_VOLUME_DIR:-./localstack_data}:/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+#    healthcheck:
+#      test: ["CMD", "curl", "-f", "http://localhost:4566/_localstack/health"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 3
