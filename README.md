@@ -101,7 +101,7 @@ cd patients-management-microservices
 docker-compose up --build
 ```
 
-Accede al API Gateway en: [http://localhost:8080](http://localhost:8080)
+Accede al API Gateway en: [http://localhost:4004](http://localhost:4004)
 
 ---
 
