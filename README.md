@@ -1,6 +1,6 @@
 #  Patients Management Microservices
 
-Este proyecto es una **API basada en microservicios** para la gestión de pacientes. Está diseñada para escalar, ser segura y simular un entorno real de despliegue en AWS utilizando herramientas modernas como Kafka, Docker, AWS, LocalStack (para simular entorno de AWS de manera local), entre otras.
+Este proyecto es una **API basada en microservicios** para la gestión de pacientes. Simula un entorno real de despliegue en AWS utilizando herramientas modernas como Kafka, Docker, AWS, LocalStack (para simular entorno de AWS de manera local), entre otras.
 
 ---
 
