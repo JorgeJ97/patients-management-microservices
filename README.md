@@ -4,6 +4,9 @@ Este proyecto es una **API basada en microservicios** para la gestión de pacien
 
 ---
 
+## 🧩 Infraestructura en AWS
+![Infrastructure](./infrastructure/assets/Patients-Management-Infrastructure-diagram.drawio.png)
+
 ## 📌 Tabla de contenidos
 
 - [🚀 Características](#-características)
@@ -25,9 +28,6 @@ Este proyecto es una **API basada en microservicios** para la gestión de pacien
 - Emulación local de la nube con **LocalStack**.
 
 ---
-
-## 🧩 Infraestructura en AWS
-![Infrastructure](./infrastructure/assets/Patients-Management-Infrastructure-diagram.drawio.png)
 
 
 ## 🛠️ Tecnologías
