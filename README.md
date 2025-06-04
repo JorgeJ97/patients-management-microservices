@@ -1,6 +1,6 @@
 #  Patients Management Microservices
 
-Este proyecto es una **API basada en microservicios** para la gestión de pacientes. Simula un entorno real de despliegue en AWS utilizando herramientas modernas como Kafka, Docker, AWS, LocalStack (para simular entorno de AWS de manera local), entre otras.
+Este proyecto es una **API basada en microservicios** para la gestión de pacientes. Simula un entorno real de despliegue en AWS utilizando herramientas modernas como Kafka, Docker, AWS, LocalStack (para simular entorno de AWS de manera local), entre otras. Cada microservicio tiene su propio contenedor, igual que las instancias de bases de datos y el cluster de kafka, lo que asegura su disponibilidad gracias a los servicios de despliegue de AWS.
 
 ---
 
@@ -35,14 +35,14 @@ Este proyecto es una **API basada en microservicios** para la gestión de pacien
 - **Kafka (MSK)**
 - **gRPC**
 - **PostgreSQL (RDS)**
-- **Docker**
+- **Docker** (Para la construccion de las imagenes de cada microservicio)
 - **AWS CDK** (Infraestructura como código)
 - **ECS + Fargate** (Ejecución de contenedores)
 - **Secrets Manager**
-- **Route 53** (Health checks)
+- **Route 53** (Health checks para las bases de datos)
 - **ALB (Application Load Balancer)**
 - **LocalStack** (Simulación de servicios AWS)
-- **JUnit** (Testing)
+- **JUnit** (Para los test de integración)
 - **Swagger ui** (Para documentacion de la API)
 
 ---
@@ -72,14 +72,6 @@ Se utiliza AWS CDK para definir los siguientes recursos:
 - Balanceador de carga (ALB)
 - Health checks con Route 53
 
-### 🧪 Simulación con LocalStack
-
-Se puede simular el entorno AWS localmente usando [LocalStack](https://github.com/localstack/localstack).
-
-```bash
-# Ejecutar entorno local
-docker-compose up --build
-```
 
 ---
 
@@ -89,22 +81,6 @@ docker-compose up --build
 
 ---
 
-## 💻 Ejecutar localmente
-
-```bash
-# Clonar repositorio
-git clone https://github.com/JorgeJ97/patients-management-microservices.git
-cd patients-management-microservices
-
-# Levantar entorno local
-docker-compose up --build
-```
-
-Accede al API Gateway en: [http://localhost:4004](http://localhost:4004)
-
----
-
-## 📖 Documentacion API
 
 
 
